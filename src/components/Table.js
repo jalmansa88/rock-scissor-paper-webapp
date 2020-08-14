@@ -2,9 +2,7 @@ import React, { Component } from 'react';
 
 export class Table extends Component {
 	render() {
-        const { columnNames, data } = this.props;
-        
-        console.log('tabla',this.props)
+        const { columnNames, dataDefinition, data } = this.props;
 
 		let tableHeader;
 		if (!!columnNames) {
@@ -20,16 +18,15 @@ export class Table extends Component {
 		}
 
 		let tableBody;
-		if (data) {
+		if (data && dataDefinition) {
 			tableBody = (
 				<tbody>
 					{data.map((row, index) => {
 						return (
 							<tr key={index}>
-								<th>{index + 1}</th>
-								<td>{row.P1_HAND}</td>
-								<td>{row.P2_HAND}</td>
-								<td>{row.WINNER}</td>
+								{dataDefinition.map((def, index) => {
+									return <td>{row[dataDefinition[index]]}</td>
+								})}
 							</tr>
 						);
 					})}
