@@ -14,6 +14,7 @@ _Simple WebApp to play the game_
 - [create-react-app](https://github.com/facebook/create-react-app) to bootstrap the project scaffolding
 - [NPM](https://www.npmjs.com/) as package manager
 - [Bulma](https://bulma.io/) as style library
+- [Enzyme](https://github.com/enzymejs/enzyme) and [Jest](https://jestjs.io/)as testing framework
 - Developed under Linux Mint 19
 
 ## Notes:
