@@ -12,8 +12,8 @@ export class Home extends Component {
 		let sessionId = localStorage.getItem('sessionId');
 		if(!sessionId) {
 			sessionId = this.generateSessionId();
+			localStorage.setItem('sessionId', sessionId)
 		}
-		localStorage.setItem('sessionId', sessionId)
 		this.setState({sessionId})
 		this.fetchGameData(sessionId);
 	}

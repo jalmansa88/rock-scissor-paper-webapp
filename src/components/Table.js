@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 
 export class Table extends Component {
 	render() {
-        const { columnNames, dataDefinition, data } = this.props;
+		const { columnNames, dataDefinition, data } = this.props;
 
 		let tableHeader;
 		if (!!columnNames) {
@@ -25,7 +25,11 @@ export class Table extends Component {
 						return (
 							<tr key={index}>
 								{dataDefinition.map((def, index) => {
-									return <td>{row[dataDefinition[index]]}</td>
+									return (
+										<td key={index}>
+											{row[dataDefinition[index]]}
+										</td>
+									);
 								})}
 							</tr>
 						);
